@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" data-theme="light-blue">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Finora — Personal & Business Financial Management System" />
+    <title>Finora — Personal & Business Finance Manager</title>
+    <script>
+      (function() {
+        try {
+          var saved = localStorage.getItem('finora_theme');
+          var valid = ['light-blue', 'dark-navy', 'emerald-green', 'modern-purple'];
+          if (saved && valid.indexOf(saved) !== -1) {
+            document.documentElement.setAttribute('data-theme', saved);
+            if (saved === 'dark-navy') {
+              document.documentElement.classList.add('dark');
+            }
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="font-sans antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
